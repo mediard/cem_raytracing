@@ -1,0 +1,63 @@
+MATERIAL Space         1.00000        0.0000    1.00000
+MATERIAL Metal         1.00000       5.800000E+7    1.00000
+MATERIAL Wood          1.80000        110.6700        1.00000
+MATERIAL Concrete      5.37000        340.00        1.00000
+MATERIAL Brick         4.38000        180.5000        1.00000
+WALL_TYPE FREE                 SOLID Space      12.4
+WALL_TYPE Metalsheet           SOLID Brick    0.1
+WALL_TYPE ClayBlock2           LAYERED 5 Concrete 10  Brick 5  Space 10  Brick 5 Concrete 10
+WALL_TYPE flrwall              SOLID Concrete  30.
+WALL_TYPE regular             SOLID Concrete  10.
+WALL_TYPE door                 SOLID  Wood  5.
+POINT xmitter      1.70000        3.50000        1.60000   
+C W1
+POINT 1            0.000       0.00      0.0000E+00
+POINT 1t           1.500       0.00       3.0000
+C W2
+POINT 2            1.5        0000       2.000
+POINT 2t           2.50       0.00       3.000
+C W3
+POINT 3            1.500      0.00       0.000
+POINT 3t           2.50       0.00       2.00
+C W4
+POINT 4            2.5       0.0000       0.000
+POINT 4t           3.0       0.000       3.00000
+C W5
+POINT 5           3.0        0.0           0.
+POINT 5t         3.0        4.           3.
+C W6
+POINT 6           0.        4.0           0.
+POINT 6t           3.        4.           3.
+C W7
+POINT 7           0.        0.0           0.
+POINT 7t           0.        4.           3.
+C W8
+POINT 8           0.        0.0           0.
+POINT 8t          3.        4.           0.
+C W9
+POINT 9           0.        0.0           3.
+POINT 9t           3.        4.           3.
+C
+POINT gridst       1.255     0.055   1.60000
+POINT griden       2.355     3.955   1.60000
+C
+DEFINE_WALL 1          1t         regular
+DEFINE_WALL 2          2t         regular
+DEFINE_WALL 3          3t         door
+DEFINE_WALL 4          4t         regular
+DEFINE_WALL 5          5t         regular
+DEFINE_WALL 6          6t         regular
+DEFINE_WALL 7          7t         regular
+DEFINE_WALL 8          8t         flrwall
+DEFINE_WALL 9          9t         flrwall
+C
+FREQUENCY       2450 MHz
+SOURCE_LOCATION xmitter
+SOURCE_POWER    427.0000     mW.
+RCVRGRID gridst     griden      1.0
+CCPOINT onercvr  3.0  1.0  2.0
+CCRCVRPOINT onercvr
+C RCVRLINE gridst griden 1
+CEMEAN
+CC RMS
+CC hello
